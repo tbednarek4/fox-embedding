@@ -2,14 +2,14 @@
 
 Authors: Tomasz Bednarek, James Pogrebetsky, Michał Tomza, Alexandra Siklitskaya & Adam Kubas.
 
-![FOX logo](https://gitlab.com/coopcat-ipc-pas/fox/-/blob/main/misc/logo-fox.png)
+![FOX logo](misc/logo-fox.png)
 Logo generated with ChatGPT.
 
 ## Aim of the program
 Based on the modern condensed matter physics and via inclusion of many-body effects, we supplement the ORCA [1] limited description of the metallic semi-infinite bulk with the proper point-charge embedding. [2]
 
 ## Usage of the program
-The user is most welcome to read our [`manual.pdf`](https://gitlab.com/coopcat-ipc-pas/fox/-/blob/main/manual.pdf) for more details.
+The user is most welcome to read our [`manual.pdf`](manual.pdf) for more details.
 
 Currently, the program (`generator.o`) is compiled for the Ubuntu operating system and has been tested on versions 18.04 LTS, 20.04 LTS, and 24.04 LTS. For other operating systems, such as Windows or macOS, the provided executable can still be used through a virtual machine running Ubuntu, or via the Windows Subsystem for Linux (WSL) in the case of Windows.
 
