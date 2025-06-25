@@ -12,7 +12,7 @@ The user is most welcome to read our [`manual.pdf`](manual.pdf) for more details
 
 Currently, the program (`generator.o`) is compiled for the Ubuntu operating system and has been tested on versions 18.04 LTS, 20.04 LTS, and 24.04 LTS. For other operating systems, such as Windows or macOS, the provided executable can still be used through a virtual machine running Ubuntu, or via the Windows Subsystem for Linux (WSL) in the case of Windows.
 
-Generation of the point-charge embedding is carried out with the executable `generator.o`. The executable requires the binary data file `model.bin`, which contains the response of Pt(111) sampled at a vast real-space grid, and computed using the theoretical approach described in our paper [2]. Both files are available inside the [`execs`](https://github.com/tbednarek4/friedel-oscillation-extension/tree/main/execs) directory in this repository. 
+Generation of the point-charge embedding is carried out with the executable `generator.o`. The executable requires the binary data file `model.bin`, which contains the response of Pt(111) sampled at a vast real-space grid, and computed using the theoretical approach described in our paper [2]. Both files are available inside the [`execs`](execs) directory in this repository. 
 
 Tip: In case of the error `bash: ./generator.o: Permission denied`, it is advisable to give an executable permission via the `chmod +x ./generator.o` command.
 
@@ -34,7 +34,7 @@ The `-o` or `--order` flag defines the order $n$ (or diameter) of the embedding 
 To generate embedded point charges for the atop adsorption site of CO on Pt(111) using the recommended dipole moment, and assuming the geometry is provided in the file `orca-atop.inp`, the following command can be used (for the maximum tested order of 15): `./generator.o orca-atop.inp --dipole 0.089 --order 15`.
 
 ### Note regarding input files
-The program is currently calibrated for the $\textrm{Pt}_{13}$ cluster (extracted from the Pt(111) surface), which is provided in the [`Pt13.xyz`](https://github.com/tbednarek4/friedel-oscillation-extension/blob/main/example/Pt13.xyz) file. The surface layer corresponds to $z = 0$, contains 7 Pt atoms, and is centered at $(x, y) = (0, 0)$. The CO molecule should be positioned in the vacuum region defined by $z < 0$ (see exemplary ORCA input files `orca-*.inp` for atop/bridge/hollow/reference adsorption sites in the [`example`](https://github.com/tbednarek4/friedel-oscillation-extension/tree/main/example) directory).
+The program is currently calibrated for the $\textrm{Pt}_{13}$ cluster (extracted from the Pt(111) surface), which is provided in the [`Pt13.xyz`](example/Pt13.xyz) file. The surface layer corresponds to $z = 0$, contains 7 Pt atoms, and is centered at $(x, y) = (0, 0)$. The CO molecule should be positioned in the vacuum region defined by $z < 0$ (see exemplary ORCA input files `orca-*.inp` for atop/bridge/hollow/reference adsorption sites in the [`example`](example) directory).
 
 ### Output of the program
 The program outputs a file named `<filename>-<order>.pc` (where `<filename>` is the name of the input file w/o `.inp` or `.xyz` extension, and `<order>` is the embedding size) containing embedded point charges around the cluster and right-away compatible with ORCA.
