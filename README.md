@@ -1,4 +1,6 @@
-# Friedel Oscillation eXtension (FOX) [![CC BY-NC-ND 4.0][cc-by-nc-nd-shield]][cc-by-nc-nd]
+# Friedel Oscillation eXtension (FOX)
+
+[![CC BY-NC-ND 4.0][cc-by-nc-nd-shield]][cc-by-nc-nd]
 
 Authors: Tomasz Bednarek, James Pogrebetsky, Michał Tomza, Alexandra Siklitskaya & Adam Kubas.
 
