@@ -2,7 +2,7 @@
 
 Authors: Tomasz Bednarek, James Pogrebetsky, Michał Tomza, Alexandra Siklitskaya & Adam Kubas.
 
-![FOX logo](misc/logo-fox.png)
+![FOX logo](misc/logo-fox.jpg)
 Logo generated with ChatGPT.
 
 ## Aim of the program
