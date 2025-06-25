@@ -1,4 +1,4 @@
-# FOX — Friedel Oscillation eXtension
+# Friedel Oscillation eXtension (FOX) [![CC BY-NC-ND 4.0][cc-by-nc-nd-shield]][cc-by-nc-nd]
 
 Authors: Tomasz Bednarek, James Pogrebetsky, Michał Tomza, Alexandra Siklitskaya & Adam Kubas.
 
@@ -70,8 +70,6 @@ on metal surfaces*. In preparation **2025**.
 [3] P. Deshlahra, J. Conway, E. E. Wolf, and W. F. Schneider. *Influence of Dipole–Dipole Interactions on Coverage-Dependent Adsorption: CO and NO on Pt(111)*. Langmuir 28 (22) 8408-8417 **2012**.
 
 ## License CC BY-NC-ND 4.0
-
-Shield: [![CC BY-NC-ND 4.0][cc-by-nc-nd-shield]][cc-by-nc-nd]
 
 This work is licensed under a
 [Creative Commons Attribution-NonCommercial-NoDerivs 4.0 International License][cc-by-nc-nd].
