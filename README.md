@@ -1,93 +1,84 @@
-# FOX
+# FOX — Friedel Oscillation eXtension
 
+Authors: Tomasz Bednarek, James Pogrebetsky, Michał Tomza, Alexandra Siklitskaya & Adam Kubas.
 
+![FOX logo](https://github.com/tbednarek4/fox/blob/main/misc/logo-fox.png)
+Logo generated with ChatGPT.
 
-## Getting started
+## Aim of the program
+Based on the modern condensed matter physics and via inclusion of many-body effects, we supplement the ORCA [1] limited description of the metallic semi-infinite bulk with the proper point-charge embedding. [2]
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+## Usage of the program
+The user is most welcome to read our [`manual.pdf`](https://github.com/tbednarek4/friedel-oscillation-extension/blob/main/manual.pdf) for more details.
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+Currently, the program (`generator.o`) is compiled for the Ubuntu operating system and has been tested on versions 18.04 LTS, 20.04 LTS, and 24.04 LTS. For other operating systems, such as Windows or macOS, the provided executable can still be used through a virtual machine running Ubuntu, or via the Windows Subsystem for Linux (WSL) in the case of Windows.
 
-## Add your files
+Generation of the point-charge embedding is carried out with the executable `generator.o`. The executable requires the binary data file `model.bin`, which contains the response of Pt(111) sampled at a vast real-space grid, and computed using the theoretical approach described in our paper [2]. Both files are available inside the [`execs`](https://github.com/tbednarek4/friedel-oscillation-extension/tree/main/execs) directory in this repository. 
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/topics/git/add_files/#add-files-to-a-git-repository) or push an existing Git repository with the following command:
+Tip: In case of the error `bash: ./generator.o: Permission denied`, it is advisable to give an executable permission via the `chmod +x ./generator.o` command.
 
+### Execution of the program
+To display help and exit: `./generator.o --help`.
+
+Command usage:
 ```
-cd existing_repo
-git remote add origin https://gitlab.com/coopcat-ipc-pas/fox.git
-git branch -M main
-git push -uf origin main
+./generator.o [-i] <filename> -d <float> -o <int>
+./generator.o [--input] <filename> --dipole <float> --order <int>
 ```
 
-## Integrate with your tools
+The `-i` or `--input` flag is optional; the input filename can be provided directly as the first positional argument. This flag specifies the input file, which must be either in ORCA input format (`*.inp`) [2] or in XYZ format (`*.xyz`). Only a single input file is supported per run, and only files with these two extensions are accepted.
 
-- [ ] [Set up project integrations](https://gitlab.com/coopcat-ipc-pas/fox/-/settings/integrations)
+The `-d` or `--dipole` flag specifies the effective $z$-component of the dipole moment of the adsorbed CO molecule, in units of eÅ. We recommend using values from Ref. [3]. A positive value corresponds to an effective positive charge on the carbon atom and a negative charge on the oxygen atom.
 
-## Collaborate with your team
+The `-o` or `--order` flag defines the order $n$ (or diameter) of the embedding point charge arrangement. The corresponding physical diameter $d$ of the embedding is calculated as: $d = (n - 1)\cdot\frac{a \sqrt{3}}{2}$, where $a = 2.812\textrm{ }Å$ is the Pt-Pt bond length.
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/user/project/merge_requests/auto_merge/)
+To generate embedded point charges for the atop adsorption site of CO on Pt(111) using the recommended dipole moment, and assuming the geometry is provided in the file `orca-atop.inp`, the following command can be used (for the maximum tested order of 15): `./generator.o orca-atop.inp --dipole 0.089 --order 15`.
 
-## Test and Deploy
+### Note regarding input files
+The program is currently calibrated for the $\textrm{Pt}_{13}$ cluster (extracted from the Pt(111) surface), which is provided in the [`Pt13.xyz`](https://github.com/tbednarek4/friedel-oscillation-extension/blob/main/example/Pt13.xyz) file. The surface layer corresponds to $z = 0$, contains 7 Pt atoms, and is centered at $(x, y) = (0, 0)$. The CO molecule should be positioned in the vacuum region defined by $z < 0$ (see exemplary ORCA input files `orca-*.inp` for atop/bridge/hollow/reference adsorption sites in the [`example`](https://github.com/tbednarek4/friedel-oscillation-extension/tree/main/example) directory).
 
-Use the built-in continuous integration in GitLab.
+### Output of the program
+The program outputs a file named `<filename>-<order>.pc` (where `<filename>` is the name of the input file w/o `.inp` or `.xyz` extension, and `<order>` is the embedding size) containing embedded point charges around the cluster and right-away compatible with ORCA.
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+### Recommended dipole moment values for the most frequent adsorption sites of CO at Pt(111)
+According to the Ref. [3], the most optimal effective $z$-component dipole moments of CO at Pt(111) are:
+- atop position: 0.0890 eÅ,
+- bridge position: -0.0500 eÅ,
+- hollow position: -0.0790 eÅ,
+- reference position: 0.0254 eÅ,
 
-***
+where positive values signify an effective positive charge on the carbon atom, and an effective negative charge on the oxygen atom.
 
-# Editing this README
+## Source code availability
+The full source code for this project is not publicly available in this repository. However, it can be provided upon reasonable request for academic or non-commercial purposes. If you are interested in accessing the code, please contact us at this email: fox@ichf.edu.pl.
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
+Please briefly describe your intended use or research interest in the project when reaching out.
 
-## Suggestions for a good README
+## Citation
+If you use this software or any part of its methodology in your research, please cite the following paper:
 
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+- T. Bednarek, J. Pogrebetsky, M. Tomza, A. Siklitskaya and A. Kubas. *Effective model describing long-range interactions
+on metal surfaces*. In preparation **2025**
 
-## Name
-Choose a self-explaining name for your project.
+Proper citation helps support our research and allows others to find the original work. Thank you!
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+## References
+[1] T. Bednarek, J. Pogrebetsky, M. Tomza, A. Siklitskaya and A. Kubas. *Effective model describing long-range interactions
+on metal surfaces*. In preparation **2025**.
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+[2] F. Neese, F. Wennmohs, U. Becker and C. Riplinger. *The ORCA quantum chemistry program package*. The Journal of Chemical Physics, 152 224108 **2020**.
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+[3] P. Deshlahra, J. Conway, E. E. Wolf, and W. F. Schneider. *Influence of Dipole–Dipole Interactions on Coverage-Dependent Adsorption: CO and NO on Pt(111)*. Langmuir 28 (22) 8408-8417 **2012**.
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+## License CC BY-NC-ND 4.0
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+Shield: [![CC BY-NC-ND 4.0][cc-by-nc-nd-shield]][cc-by-nc-nd]
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+This work is licensed under a
+[Creative Commons Attribution-NonCommercial-NoDerivs 4.0 International License][cc-by-nc-nd].
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+[![CC BY-NC-ND 4.0][cc-by-nc-nd-image]][cc-by-nc-nd]
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+[cc-by-nc-nd]: http://creativecommons.org/licenses/by-nc-nd/4.0/
+[cc-by-nc-nd-image]: https://licensebuttons.net/l/by-nc-nd/4.0/88x31.png
+[cc-by-nc-nd-shield]: https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg
