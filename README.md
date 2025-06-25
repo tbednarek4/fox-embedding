@@ -3,7 +3,6 @@
 Authors: Tomasz Bednarek, James Pogrebetsky, Michał Tomza, Alexandra Siklitskaya & Adam Kubas.
 
 ![FOX logo](misc/logo-fox.jpg)
-Logo generated with ChatGPT.
 
 ## Aim of the program
 Based on the modern condensed matter physics and via inclusion of many-body effects, we supplement the ORCA [1] limited description of the metallic semi-infinite bulk with the proper point-charge embedding. [2]
