@@ -52,10 +52,13 @@ The program outputs a file named `<filename>-<order>.pc` (where `<filename>` is 
 
 ### Recommended dipole moment values for the most frequent adsorption sites of CO at Pt(111)
 According to the Ref. [3], the most optimal effective $z$-component dipole moments of CO at Pt(111) are:
-- atop position: 0.0890 eÅ,
-- bridge position: -0.0500 eÅ,
-- hollow position: -0.0790 eÅ,
-- reference position: 0.0254 eÅ,
+
+adsorption position | dipole moment [eÅ]
+--- | ---
+atop | 0.0890
+bridge | -0.0500
+hollow | -0.0790
+reference | 0.0254
 
 where positive values signify an effective positive charge on the carbon atom, and an effective negative charge on the oxygen atom.
 
