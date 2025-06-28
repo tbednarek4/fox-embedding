@@ -60,7 +60,7 @@ According to the Ref. [3], the most optimal effective $z$-component dipole momen
 where positive values signify an effective positive charge on the carbon atom, and an effective negative charge on the oxygen atom.
 
 ## Source code availability
-The full source code for this project is not publicly available in this repository. However, it can be provided upon reasonable request for academic or non-commercial purposes. If you are interested in accessing the code, please contact us at this email: fox@ichf.edu.pl.
+The full source code for this project is not publicly available in this repository. However, it can be provided upon reasonable request for academic or non-commercial purposes. If you are interested in accessing the code, please contact Alexandra Siklitskaya: asiklit@ichf.edu.pl.
 
 Please briefly describe your intended use or research interest in the project when reaching out.
 
