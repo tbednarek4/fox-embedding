@@ -9,6 +9,15 @@ Authors: Tomasz Bednarek, James Pogrebetsky, Michał Tomza, Alexandra Siklitskay
 ## Aim of the program
 Based on the modern condensed matter physics and via inclusion of many-body effects, we supplement the ORCA [1] limited description of the metallic semi-infinite bulk with the proper point-charge embedding. [2]
 
+## Required system libraries
+Compiled, run & tested on Ubuntu 22.04.5 LTS & 24.04.2 LTS.
+```
+glibc >= 2.34
+OpenSSL >= 3.0.0
+C++ ABI version 1.3 compatibility
+libstdc++ versions supporting GLIBCXX_3.4.21
+```
+
 ## Usage of the program
 The user is most welcome to read our [`manual.pdf`](manual.pdf) for more details.
 
