@@ -10,7 +10,9 @@ Authors: Tomasz Bednarek, James Pogrebetsky, Michał Tomza, Alexandra Siklitskay
 Based on the modern condensed matter physics and via inclusion of many-body effects, we supplement the ORCA [1] limited description of the metallic semi-infinite bulk with the proper point-charge embedding. [2]
 
 ## Required system libraries
-Compiled, run & tested on Ubuntu 22.04.5 LTS & 24.04.2 LTS.
+Currently, the program (`generator.o`) has been compiled, run & tested on Ubuntu 22.04.5 LTS & 24.04.2 LTS. For other operating systems, such as Windows or macOS, the provided executable can still be used through a virtual machine running Ubuntu, or via the Windows Subsystem for Linux (WSL) in the case of Windows.
+
+Below are listed versions of the required libraries:
 ```
 glibc >= 2.34
 OpenSSL >= 3.0.0
@@ -20,8 +22,6 @@ libstdc++ versions supporting GLIBCXX_3.4.21
 
 ## Usage of the program
 The user is most welcome to read our [`manual.pdf`](manual.pdf) for more details.
-
-Currently, the program (`generator.o`) is compiled for the Ubuntu operating system and has been tested on versions 18.04 LTS, 20.04 LTS, and 24.04 LTS. For other operating systems, such as Windows or macOS, the provided executable can still be used through a virtual machine running Ubuntu, or via the Windows Subsystem for Linux (WSL) in the case of Windows.
 
 Generation of the point-charge embedding is carried out with the executable `generator.o`. The executable requires the binary data file `model.bin`, which contains the response of Pt(111) sampled at a vast real-space grid, and computed using the theoretical approach described in our paper [2]. Both files are available inside the [`execs`](execs) directory in this repository. 
 
