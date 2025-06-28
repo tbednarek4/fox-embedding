@@ -40,7 +40,7 @@ The `-i` or `--input` flag is optional; the input filename can be provided direc
 
 The `-d` or `--dipole` flag specifies the effective $z$-component of the dipole moment of the adsorbed CO molecule, in units of eÅ. We recommend using values from Ref. [\[3\]](#ref3). A positive value corresponds to an effective positive charge on the carbon atom and a negative charge on the oxygen atom.
 
-The `-o` or `--order` flag defines the order $n$ (or diameter) of the embedding point charge arrangement. The corresponding physical diameter $d$ of the embedding is calculated as: $d = (n - 1)\cdot\frac{a \sqrt{3}}{2}$, where $a = 2.812\textrm{ }Å$ is the Pt-Pt bond length.
+The `-o` or `--order` flag defines the order $n$ (or diameter) of the embedding point charge arrangement. The corresponding physical diameter $d$ of the embedding is calculated as: $d = (n - 1)\cdot\frac{a \sqrt{3}}{2}$, where $a = 2.812\textrm{ \AA}$ is the Pt-Pt bond length.
 
 To generate embedded point charges for the atop adsorption site of CO on Pt(111) using the recommended dipole moment, and assuming the geometry is provided in the file `orca-atop.inp`, the following command can be used (for the maximum tested order of 15): `./generator.o orca-atop.inp --dipole 0.089 --order 15`.
 
