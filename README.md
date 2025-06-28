@@ -76,10 +76,10 @@ on metal surfaces*. In preparation **2025**
 Proper citation helps support our research and allows others to find the original work. Thank you!
 
 ## References
-[1] <a name="ref1"></a> T. Bednarek, J. Pogrebetsky, M. Tomza, A. Siklitskaya and A. Kubas. *Effective model describing long-range interactions
-on metal surfaces*. In preparation **2025**.
+[1] <a name="ref1"></a> F. Neese, F. Wennmohs, U. Becker and C. Riplinger. *The ORCA quantum chemistry program package*. The Journal of Chemical Physics, 152 224108 **2020**.
 
-[2] <a name="ref2"></a> F. Neese, F. Wennmohs, U. Becker and C. Riplinger. *The ORCA quantum chemistry program package*. The Journal of Chemical Physics, 152 224108 **2020**.
+[2] <a name="ref2"></a> T. Bednarek, J. Pogrebetsky, M. Tomza, A. Siklitskaya and A. Kubas. *Effective model describing long-range interactions
+on metal surfaces*. In preparation **2025**.
 
 [3] <a name="ref3"></a> P. Deshlahra, J. Conway, E. E. Wolf, and W. F. Schneider. *Influence of Dipole–Dipole Interactions on Coverage-Dependent Adsorption: CO and NO on Pt(111)*. Langmuir 28 (22) 8408-8417 **2012**.
 
