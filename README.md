@@ -70,18 +70,18 @@ Please briefly describe your intended use or research interest in the project wh
 ## Citation
 If you use this software or any part of its methodology in your research, please cite the following paper:
 
-- T. Bednarek, J. Pogrebetsky, M. Tomza, A. Siklitskaya and A. Kubas. *Effective model describing long-range interactions
-on metal surfaces*. In preparation **2025**
+- Bednarek, T.; Pogrebetsky, J.; Tomza, M.; Siklitskaya, A.; Kubas, A. Effective model describing long-range interactions
+on metal surfaces. *ChemRxiv* **2025**. [DOI:10.26434/chemrxiv-2025-m2d3s](https://doi.org/10.26434/chemrxiv-2025-m2d3s)
 
 Proper citation helps support our research and allows others to find the original work. Thank you!
 
 ## References
-[1] <a name="ref1"></a> F. Neese, F. Wennmohs, U. Becker and C. Riplinger. *The ORCA quantum chemistry program package*. The Journal of Chemical Physics, 152 224108 **2020**.
+[1] <a name="ref1"></a> Neese, F.; Wennmohs, F.; Becker, U.; Riplinger, C. The ORCA Quantum Chemistry Program Package. *J. Chem. Phys.* **2020**, *152*, 224108.
 
-[2] <a name="ref2"></a> T. Bednarek, J. Pogrebetsky, M. Tomza, A. Siklitskaya and A. Kubas. *Effective model describing long-range interactions
-on metal surfaces*. In preparation **2025**.
+[2] <a name="ref2"></a> Bednarek, T.; Pogrebetsky, J.; Tomza, M.; Siklitskaya, A.; Kubas, A. Effective model describing long-range interactions
+on metal surfaces. *ChemRxiv* **2025**. [DOI:10.26434/chemrxiv-2025-m2d3s](https://doi.org/10.26434/chemrxiv-2025-m2d3s)
 
-[3] <a name="ref3"></a> P. Deshlahra, J. Conway, E. E. Wolf, and W. F. Schneider. *Influence of Dipole–Dipole Interactions on Coverage-Dependent Adsorption: CO and NO on Pt(111)*. Langmuir 28 (22) 8408-8417 **2012**.
+[3] <a name="ref3"></a> Deshlahra, P.; Conway, J.; Wolf, E. E.; Schneider, W. F. Influence of Dipole–Dipole Interactions on Coverage-Dependent Adsorption: CO and NO on Pt(111). *Langmuir* **2012**, *28* (22), 8408–8417.
 
 ## License CC BY-NC-SA 4.0
 
